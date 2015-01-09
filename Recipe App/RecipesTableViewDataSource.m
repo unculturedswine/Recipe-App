@@ -22,7 +22,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Recipe"];
     
-    cell.textLabel.text = @"Hi";
+    cell.textLabel.text = [[RARecipes class] titleAtIndex:indexPath.row];
     return cell;
 }
 
