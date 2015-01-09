@@ -7,10 +7,12 @@
 //
 
 #import "RecipeViewController.h"
+#import "RecipesTableViewDataSource.h"
 
 @interface RecipeViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) RecipesTableViewDataSource *dataSource;
 
 @end
 
@@ -21,6 +23,9 @@
     // Do any additional setup after loading the view.
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+    self.dataSource = [[RecipesTableViewDataSource alloc] init];
+    self.tableView.dataSource = self.dataSource;
+    [self.dataSource registerTableView:self.tableView];
     [self.view addSubview:self.tableView];
 }
 
