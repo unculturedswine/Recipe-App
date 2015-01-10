@@ -8,8 +8,9 @@
 
 #import "RecipeViewController.h"
 #import "RecipesTableViewDataSource.h"
+#import "RADetailViewController.h"
 
-@interface RecipeViewController ()
+@interface RecipeViewController () <UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) RecipesTableViewDataSource *dataSource;
@@ -21,13 +22,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+    self.tableView.delegate = self;
     // Question: Why self.view.frame
     self.dataSource = [[RecipesTableViewDataSource alloc] init];
     self.tableView.dataSource = self.dataSource;
     [self.dataSource registerTableView:self.tableView];
     [self.view addSubview:self.tableView];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    RADetailViewController * detailViewController = [RADetailViewController new];
+//    detailViewController.title = @"Recipe";
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

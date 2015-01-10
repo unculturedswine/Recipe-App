@@ -10,6 +10,7 @@
 		5DACB19F1A5F7C3800C8A2FA /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACB19E1A5F7C3800C8A2FA /* RecipeViewController.m */; };
 		5DACB1A21A5F7F6600C8A2FA /* RARecipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACB1A11A5F7F6600C8A2FA /* RARecipes.m */; };
 		5DACB1A51A5F81A200C8A2FA /* RecipesTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACB1A41A5F81A200C8A2FA /* RecipesTableViewDataSource.m */; };
+		5DED9DB41A61A34C0012CA1F /* RADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DED9DB31A61A34C0012CA1F /* RADetailViewController.m */; };
 		71F67B51192C8D6A00E609F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F67B50192C8D6A00E609F1 /* Foundation.framework */; };
 		71F67B53192C8D6A00E609F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F67B52192C8D6A00E609F1 /* CoreGraphics.framework */; };
 		71F67B55192C8D6A00E609F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F67B54192C8D6A00E609F1 /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 		5DACB1A11A5F7F6600C8A2FA /* RARecipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RARecipes.m; sourceTree = "<group>"; };
 		5DACB1A31A5F81A200C8A2FA /* RecipesTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesTableViewDataSource.h; sourceTree = "<group>"; };
 		5DACB1A41A5F81A200C8A2FA /* RecipesTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesTableViewDataSource.m; sourceTree = "<group>"; };
+		5DED9DB21A61A34C0012CA1F /* RADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADetailViewController.h; sourceTree = "<group>"; };
+		5DED9DB31A61A34C0012CA1F /* RADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADetailViewController.m; sourceTree = "<group>"; };
 		71F67B4D192C8D6A00E609F1 /* Recipe App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F67B50192C8D6A00E609F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71F67B52192C8D6A00E609F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,14 +119,16 @@
 		71F67B56192C8D6A00E609F1 /* Recipe App */ = {
 			isa = PBXGroup;
 			children = (
+				71F67B5F192C8D6A00E609F1 /* RAAppDelegate.h */,
+				71F67B60192C8D6A00E609F1 /* RAAppDelegate.m */,
 				5DACB19D1A5F7C3800C8A2FA /* RecipeViewController.h */,
 				5DACB19E1A5F7C3800C8A2FA /* RecipeViewController.m */,
 				5DACB1A31A5F81A200C8A2FA /* RecipesTableViewDataSource.h */,
 				5DACB1A41A5F81A200C8A2FA /* RecipesTableViewDataSource.m */,
+				5DED9DB21A61A34C0012CA1F /* RADetailViewController.h */,
+				5DED9DB31A61A34C0012CA1F /* RADetailViewController.m */,
 				5DACB1A01A5F7F6500C8A2FA /* RARecipes.h */,
 				5DACB1A11A5F7F6600C8A2FA /* RARecipes.m */,
-				71F67B5F192C8D6A00E609F1 /* RAAppDelegate.h */,
-				71F67B60192C8D6A00E609F1 /* RAAppDelegate.m */,
 				71F67B62192C8D6A00E609F1 /* Images.xcassets */,
 				71F67B57192C8D6A00E609F1 /* Supporting Files */,
 			);
@@ -257,6 +262,7 @@
 			files = (
 				5DACB1A21A5F7F6600C8A2FA /* RARecipes.m in Sources */,
 				71F67B5D192C8D6A00E609F1 /* main.m in Sources */,
+				5DED9DB41A61A34C0012CA1F /* RADetailViewController.m in Sources */,
 				5DACB1A51A5F81A200C8A2FA /* RecipesTableViewDataSource.m in Sources */,
 				71F67B61192C8D6A00E609F1 /* RAAppDelegate.m in Sources */,
 				5DACB19F1A5F7C3800C8A2FA /* RecipeViewController.m in Sources */,
