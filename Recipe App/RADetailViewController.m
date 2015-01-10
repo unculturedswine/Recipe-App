@@ -42,10 +42,12 @@ static CGFloat margin = 15;
         raDescription.numberOfLines = 0;
         [scrollView addSubview:raDescription];
     // Ingredient List
-    UILabel *raIngredient = [[UILabel alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, 200)];
-        raIngredient.backgroundColor = [UIColor magentaColor];
-        //raIngredient.text = [[RARecipes class] ingredientTypeAtIndex:self.recipeIndex inRecipeAtIndex:self.recipeIndex];
+    for (int i = 0; i <[RARecipes ingredientCountAtIndex:self.recipeIndex]; i++) {
+        UILabel *raIngredient = [[UILabel alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, 200)];
+        //raIngredient.backgroundColor = [UIColor magentaColor];
+        raIngredient.text = [[RARecipes class] ingredientTypeAtIndex:i inRecipeAtIndex:self.recipeIndex];
         [scrollView addSubview:raIngredient];
+    }
     // Directions
     UILabel *raDirections = [[UILabel alloc] initWithFrame:CGRectMake(0, 244, self.view.frame.size.width, 800)];
         raDirections.backgroundColor = [UIColor purpleColor];
