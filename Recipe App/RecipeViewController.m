@@ -23,6 +23,7 @@
     // Do any additional setup after loading the view.
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+    // Question: Why self.view.frame
     self.dataSource = [[RecipesTableViewDataSource alloc] init];
     self.tableView.dataSource = self.dataSource;
     [self.dataSource registerTableView:self.tableView];

@@ -11,5 +11,6 @@
 @interface RecipesTableViewDataSource : NSObject <UITableViewDataSource>
 
 - (void)registerTableView:(UITableView *) tableView;
+// I dont' remember why we need to do this
 
 @end

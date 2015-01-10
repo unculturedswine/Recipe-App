@@ -23,6 +23,7 @@
     
     self.window.rootViewController = navController;
     
+    
     // End of Joel breaking things
     
     self.window.backgroundColor = [UIColor whiteColor];
