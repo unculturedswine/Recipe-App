@@ -9,6 +9,7 @@
 #import "RecipeViewController.h"
 #import "RecipesTableViewDataSource.h"
 #import "RADetailViewController.h"
+#import "RARecipes.h"
 
 @interface RecipeViewController () <UITableViewDelegate>
 
@@ -22,21 +23,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame]; // Question: Why self.view.frame
     self.tableView.delegate = self;
-    // Question: Why self.view.frame
     self.dataSource = [[RecipesTableViewDataSource alloc] init];
     self.tableView.dataSource = self.dataSource;
     [self.dataSource registerTableView:self.tableView];
     [self.view addSubview:self.tableView];
 }
 
+
+// This is a delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     RADetailViewController * detailViewController = [RADetailViewController new];
-//    detailViewController.title = @"Recipe";
+    detailViewController.title = [[RARecipes class] titleAtIndex:indexPath.row]; // Shows Title
     [self.navigationController pushViewController:detailViewController animated:YES];
-    
-
 }
 
 - (void)didReceiveMemoryWarning {

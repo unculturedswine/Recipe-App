@@ -17,8 +17,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //self.view.backgroundColor = [UIColor whiteColor];
     
-    self.view.backgroundColor = [UIColor brownColor];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height *2);
+    // Recipe Description
+    UILabel *raDescription = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 375, 44)];
+    raDescription.textColor = [UIColor purpleColor];
+    raDescription.backgroundColor = [UIColor cyanColor];
+    [scrollView addSubview:raDescription];
+    // Ingredient List
+    UILabel *raIngredient = [[UILabel alloc] initWithFrame:CGRectMake(0, 44, 375, 200)];
+    raIngredient.backgroundColor = [UIColor magentaColor];
+    [scrollView addSubview:raIngredient];
+    // Directions
+    UILabel *raDirections = [[UILabel alloc] initWithFrame:CGRectMake(0, 244, 375, 800)];
+    raDirections.backgroundColor = [UIColor purpleColor];
+    [scrollView addSubview:raDirections];
+    
+    
+    [self.view addSubview:scrollView];
     
 }
 
