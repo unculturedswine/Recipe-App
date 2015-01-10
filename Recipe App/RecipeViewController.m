@@ -35,13 +35,15 @@
 // This is a delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     RADetailViewController * detailViewController = [RADetailViewController new];
-    detailViewController.title = [[RARecipes class] titleAtIndex:indexPath.row]; // Shows Title
+    //detailViewController.title = [[RARecipes class] titleAtIndex:indexPath.row]; // Shows Title
+    //detailViewController.title = @"Best Recipe";
+    detailViewController.recipeIndex = indexPath.row;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // Dispose of any resources that can be recreated
 }
 
 /*

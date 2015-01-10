@@ -7,6 +7,10 @@
 //
 
 #import "RADetailViewController.h"
+#import "RecipesTableViewDataSource.h"
+#import "RARecipes.h"
+
+static CGFloat margin = 15;
 
 @interface RADetailViewController ()
 
@@ -17,23 +21,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //self.view.backgroundColor = [UIColor whiteColor];
+    
+    CGFloat widthMinusMargin = self.view.frame.size.width - 2 * margin;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height *2);
+        scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height *2);
+    // Recipe Name
+    UILabel *raName = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+        raName.text = [[RARecipes class] titleAtIndex:self.recipeIndex];
+        raName.textAlignment = NSTextAlignmentCenter;
+        raName.font = [UIFont boldSystemFontOfSize:18];
+        [scrollView addSubview:raName];
     // Recipe Description
-    UILabel *raDescription = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 375, 44)];
-    raDescription.textColor = [UIColor purpleColor];
-    raDescription.backgroundColor = [UIColor cyanColor];
-    [scrollView addSubview:raDescription];
+    UILabel *raDescription = [[UILabel alloc] initWithFrame:CGRectMake(margin, 44, widthMinusMargin, 100)];
+        raDescription.lineBreakMode = NSLineBreakByWordWrapping;
+        raDescription.textAlignment = NSTextAlignmentCenter;
+        raDescription.text = [[RARecipes class] descriptionAtIndex:self.recipeIndex];
+        raDescription.numberOfLines = 0;
+        [scrollView addSubview:raDescription];
     // Ingredient List
-    UILabel *raIngredient = [[UILabel alloc] initWithFrame:CGRectMake(0, 44, 375, 200)];
-    raIngredient.backgroundColor = [UIColor magentaColor];
-    [scrollView addSubview:raIngredient];
+    UILabel *raIngredient = [[UILabel alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, 200)];
+        raIngredient.backgroundColor = [UIColor magentaColor];
+        //raIngredient.text = [[RARecipes class] ingredientTypeAtIndex:self.recipeIndex inRecipeAtIndex:self.recipeIndex];
+        [scrollView addSubview:raIngredient];
     // Directions
-    UILabel *raDirections = [[UILabel alloc] initWithFrame:CGRectMake(0, 244, 375, 800)];
-    raDirections.backgroundColor = [UIColor purpleColor];
-    [scrollView addSubview:raDirections];
+    UILabel *raDirections = [[UILabel alloc] initWithFrame:CGRectMake(0, 244, self.view.frame.size.width, 800)];
+        raDirections.backgroundColor = [UIColor purpleColor];
+        //raDirections.text = [[RARecipes class] recipes];
+        [scrollView addSubview:raDirections];
     
     
     [self.view addSubview:scrollView];
